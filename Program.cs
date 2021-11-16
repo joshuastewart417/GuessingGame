@@ -14,16 +14,16 @@ namespace GuessingGame
 
             void userQuery() {
 
-            int secretNum = 42;
+            int secretNum = new Random().Next(1, 101);
             
 
-            for(int i = 0; i < 3; i++) {
+            for(int i = 3; i > 0; i--) {
 
             int attempt = 0;
-            attempt = Convert.ToInt32(i + 1);
+            attempt = Convert.ToInt32(i);
 
             if( answer != secretNum ){
-                Console.WriteLine("Attempt #" + $"{attempt} That's not it, try again!");
+                Console.WriteLine($"{attempt} Guesses Left! Try again!");
                 answer = int.Parse(Console.ReadLine());
             }
             else 
@@ -39,3 +39,19 @@ namespace GuessingGame
         }
     }
 }
+
+// Phase 6
+// if (secretNum == input) {
+//     Console.WriteLine("correct");
+//     break;
+// }
+// else if (secretNum > input)
+//     Console.WriteLine("too low!")
+// {
+// else if (secretNum < input) {
+//     Console.WriteLine("too high!")
+// }
+// }
+
+
+
